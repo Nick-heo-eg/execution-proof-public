@@ -1,0 +1,107 @@
+# .gitignore for execution-proof-public
+# Minimal exclusions - this is a proof-only repository
+
+# ==============================================================================
+# CRITICAL: This repository MUST remain PUBLIC
+# Contains ONLY sealed proof artifacts, no internal design
+# ==============================================================================
+
+# Python (if any Python scripts in demos)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Environment variables (should never be in public repo anyway)
+.env
+.env.local
+*.secret
+credentials.json
+secrets/
+
+# ==============================================================================
+# FORBIDDEN CONTENT (Should never appear in public repo)
+# ==============================================================================
+
+# Private layer markers - if these appear, migration failed
+canonical-spec/
+topology/
+risk-model/
+internal-mapping/
+product-structure/
+commercial/
+
+# Specific private files that should never be here
+*DIPS*
+*SKU*
+*PRICING*
+*COMPETITIVE*
+*COMMERCIAL*
+*PRODUCT_STRUCTURE*
+*ESCALATION_PROTOCOL*
+
+# Private repository content
+echo-core-private/
+
+# ==============================================================================
+# WORKING DRAFTS (Not ready for public)
+# ==============================================================================
+*DRAFT*
+*WIP*
+*TODO*
+*INTERNAL*
+
+# ==============================================================================
+# PROOF ONLY
+# ==============================================================================
+# This repository contains:
+# - Sealed demonstration artifacts
+# - Observable behavior examples
+# - Audit log samples
+# - Limitation documentation
+#
+# This repository does NOT contain:
+# - Canonical specifications
+# - Topology analysis
+# - Risk models
+# - Internal design
+# - Product strategy
+# - Commercial information
+# ==============================================================================
+
+# ==============================================================================
+# EXPORT ARTIFACTS (Generated, not committed)
+# ==============================================================================
+EXPORT_LOG.md
+
+# ==============================================================================
+# REMINDER
+# ==============================================================================
+# Before committing to public:
+# 1. Verify: This is a sealed proof artifact
+# 2. Verify: No internal design or strategy content
+# 3. Verify: README clearly states "proof only, not production"
+# 4. Check: No paths containing forbidden keywords
+# 5. Remember: Use export-to-public.sh script, not manual copy
+# ==============================================================================
