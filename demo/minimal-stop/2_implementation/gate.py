@@ -1,15 +1,17 @@
-def judgment_gate(user_input: str) -> str:
+from decision import DecisionToken
+
+def judgment_gate(user_input: str) -> DecisionToken:
     """
     Deterministic execution boundary.
 
     Returns:
-        "STOP" if input contains forbidden keywords
-        "ALLOW" otherwise
+        DecisionToken("STOP") if input contains forbidden keywords
+        DecisionToken("ALLOW") otherwise
     """
     forbidden_keywords = ["send", "delete", "execute"]
 
     for word in forbidden_keywords:
         if word in user_input.lower():
-            return "STOP"
+            return DecisionToken("STOP")
 
-    return "ALLOW"
+    return DecisionToken("ALLOW")

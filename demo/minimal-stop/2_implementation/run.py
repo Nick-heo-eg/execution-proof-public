@@ -25,14 +25,14 @@ def main():
     decision = judgment_gate(user_input)
 
     log(f"INPUT: {user_input}")
-    log(f"DECISION: {decision}")
+    log(f"DECISION: {decision.status}")
 
-    # Execution only occurs if explicitly ALLOWED
-    if decision == "ALLOW":
-        execute_action(user_input)
+    # Execution requires authority token
+    try:
+        execute_action(user_input, decision)
         log("EXECUTION: PERFORMED")
-    else:
-        log("EXECUTION: BLOCKED")
+    except PermissionError as e:
+        log(f"EXECUTION: BLOCKED ({str(e)})")
 
     print("Run complete. Check execution.log")
 

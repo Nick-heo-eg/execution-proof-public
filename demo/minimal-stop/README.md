@@ -47,4 +47,22 @@ Open `execution.log` and verify:
 
 ---
 
+## Tamper Test (adversarial)
+
+```bash
+cd 2_implementation
+python tamper_test.py
+cat tamper.log
+```
+
+**Expected:**
+- `no-token-direct-call` → BLOCKED (PermissionError)
+- `fake-token-dict` → BLOCKED (PermissionError)
+- `stop-token` → BLOCKED (Execution denied)
+- `allow-token` → EXECUTION printed (authority granted)
+
+This proves execution cannot bypass authority issuance.
+
+---
+
 **This is observable evidence, not claims.**
